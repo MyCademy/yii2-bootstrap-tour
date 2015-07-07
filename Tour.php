@@ -47,6 +47,14 @@ class Tour extends Widget
     }
 
     /**
+     * Renders the widget.
+     */
+    public function run()
+    {
+        $this->registerPlugin('tour');
+    }
+
+    /**
      * Registers a specific Bootstrap plugin and the related events
      * @param string $name the name of the Bootstrap plugin
      */
