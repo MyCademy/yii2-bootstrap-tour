@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dd24fdb3f0a2a9374d25ddd4cb084d30",
+    "hash": "4c7845a13f12aaa233b90cbeb2659171",
     "packages": [
         {
             "name": "bower-asset/jquery",
@@ -269,16 +269,16 @@
         },
         {
             "name": "sorich87/bootstrap-tour",
-            "version": "v0.10.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sorich87/bootstrap-tour.git",
-                "reference": "29e7888d69d47d07662ebae249fb9b235bd8ca19"
+                "reference": "8dd733a38b446b16290fe1253c9f860a145369be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sorich87/bootstrap-tour/zipball/29e7888d69d47d07662ebae249fb9b235bd8ca19",
-                "reference": "29e7888d69d47d07662ebae249fb9b235bd8ca19",
+                "url": "https://api.github.com/repos/sorich87/bootstrap-tour/zipball/8dd733a38b446b16290fe1253c9f860a145369be",
+                "reference": "8dd733a38b446b16290fe1253c9f860a145369be",
                 "shasum": ""
             },
             "type": "component",
@@ -292,7 +292,7 @@
                 "bootstrap",
                 "tour"
             ],
-            "time": "2015-02-08 07:24:15"
+            "time": "2015-06-24 20:16:11"
         },
         {
             "name": "yiisoft/yii2",
@@ -434,7 +434,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "yiisoft/yii2": 20
+        "yiisoft/yii2": 20,
+        "sorich87/bootstrap-tour": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
