@@ -1,14 +1,32 @@
 {
-    "name": "mycademy/yii2-bootstrap-tour",
-    "description": "Bootstrap Tour Extension for Yii 2",
-    "require": {
-        "sorich87/bootstrap-tour": "^0.10.2"
-    },
-    "license": "Apache-2.0",
-    "authors": [
-        {
-            "name": "Rutger Hertogh",
-            "email": "r.hertogh@mycademy.com"
-        }
-    ]
+  "name": "mycademy/yii2-bootstrap-tour",
+  "description": "Bootstrap Tour Extension for Yii 2",
+  "keywords": ["yii2", "bootstrap", "tour", "extension"],
+  "type": "yii2-extension",
+  "license": "Apache-2.0",
+  "support": {
+    "issues": "https://github.com/MyCademy/yii2-bootstrap-tour/issues",
+    "source": "https://github.com/MyCademy/yii2-bootstrap-tour"
+  },
+  "authors": [
+    {
+      "name": "Rutger Hertogh",
+      "email": "r.hertogh@mycademy.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": ">=2.0.x-dev",
+    "sorich87/bootstrap-tour": "^0.10.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "MyCademy\\BootstrapTour\\": ""
+    }
+  },
+  "extra": {
+    "asset-installer-paths": {
+      "npm-asset-library": "vendor/npm",
+      "bower-asset-library": "vendor/bower"
+    }
+  }
 }
