@@ -14,7 +14,6 @@ use yii\helpers\Json;
 
 class Tour extends Widget
 {
-
     /**
      * @var string
      */
@@ -25,21 +24,11 @@ class Tour extends Widget
      */
     public $forceStart = false;
 
-
-
     /**
      * @var array the options for the underlying Bootstrap Tour JS plugin.
      * Please refer to the corresponding [Bootstrap Toor plugin API](http://bootstraptour.com/api/) for possible options.
      */
     public $clientOptions = [];
-
-
-    /**
-     * @var array the event handlers for the underlying Bootstrap Tour JS plugin.
-     * Please refer to the corresponding [Bootstrap Toor plugin API](http://bootstraptour.com/api/) for possible options.
-     */
-    public $clientEvents = [];
-
 
     /**
      * Renders the widget.
@@ -66,21 +55,4 @@ class Tour extends Widget
         }
         $this->registerClientEvents();
     }
-
-    /**
-     * Registers JS event handlers that are listed in [[clientEvents]].
-     * @since 2.0.2
-     */
-    protected function registerClientEvents()
-    {
-        if (!empty($this->clientEvents)) {
-            $id = $this->options['id'];
-            $js = [];
-            foreach ($this->clientEvents as $event => $handler) {
-                $js[] = "jQuery('#$id').on('$event', $handler);";
-            }
-            $this->getView()->registerJs(implode("\n", $js));
-        }
-    }
-
 }
