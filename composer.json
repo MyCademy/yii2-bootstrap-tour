@@ -1,0 +1,14 @@
+{
+    "name": "mycademy/yii2-bootstrap-tour",
+    "description": "Bootstrap Tour Extension for Yii 2",
+    "require": {
+        "sorich87/bootstrap-tour": "^0.10.2"
+    },
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Rutger Hertogh",
+            "email": "r.hertogh@mycademy.com"
+        }
+    ]
+}

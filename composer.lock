@@ -1,0 +1,45 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "60dff45c64d636194e6e81f2ce2f2e15",
+    "packages": [
+        {
+            "name": "sorich87/bootstrap-tour",
+            "version": "v0.10.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sorich87/bootstrap-tour.git",
+                "reference": "29e7888d69d47d07662ebae249fb9b235bd8ca19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sorich87/bootstrap-tour/zipball/29e7888d69d47d07662ebae249fb9b235bd8ca19",
+                "reference": "29e7888d69d47d07662ebae249fb9b235bd8ca19",
+                "shasum": ""
+            },
+            "type": "component",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Show people how to use your web site",
+            "homepage": "http://bootstraptour.com/",
+            "keywords": [
+                "bootstrap",
+                "tour"
+            ],
+            "time": "2015-02-08 07:24:15"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
