@@ -16,7 +16,7 @@
   ],
   "require": {
     "yiisoft/yii2": ">=2.0.x-dev",
-    "sorich87/bootstrap-tour": "^0.10.2"
+    "sorich87/bootstrap-tour": "dev-master"
   },
   "autoload": {
     "psr-4": {

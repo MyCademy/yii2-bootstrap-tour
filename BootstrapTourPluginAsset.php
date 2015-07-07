@@ -18,7 +18,7 @@ class BootstrapTourPluginAsset extends AssetBundle{
     ];
 
     public $css = [
-        'bootstrap-tour.min.css',
+        'css/bootstrap-tour.min.css',
     ];
 
     public $depends = [

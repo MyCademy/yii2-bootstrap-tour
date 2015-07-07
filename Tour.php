@@ -16,9 +16,16 @@ class Tour extends Widget
 {
 
     /**
-     * @var array
+     * @var string
      */
-    public $options = [];
+    public $name = 'tour';
+
+    /**
+     * @var string force the start of the tour
+     */
+    public $forceStart = false;
+
+
 
     /**
      * @var array the options for the underlying Bootstrap Tour JS plugin.
@@ -33,25 +40,13 @@ class Tour extends Widget
      */
     public $clientEvents = [];
 
-    /**
-     * Initializes the widget.
-     * This method will register the bootstrap tour asset bundle. If you override this method,
-     * make sure you call the parent implementation first.
-     */
-    public function init()
-    {
-        parent::init();
-        if (!isset($this->options['id'])) {
-            $this->options['id'] = $this->getId();
-        }
-    }
 
     /**
      * Renders the widget.
      */
     public function run()
     {
-        $this->registerPlugin('tour');
+        $this->registerPlugin($this->name);
     }
 
     /**
@@ -62,10 +57,11 @@ class Tour extends Widget
     {
         $view = $this->getView();
         BootstrapTourPluginAsset::register($view);
-        $id = $this->options['id'];
         if ($this->clientOptions !== false) {
             $options = empty($this->clientOptions) ? '' : Json::htmlEncode($this->clientOptions);
-            $js = "jQuery('#$id').$name($options);";
+            $js = "var $name = new Tour($options);\n";
+            $js .= "tour.init();\n";
+            $js .= "tour.start({$this->forceStart});\n";
             $view->registerJs($js);
         }
         $this->registerClientEvents();
