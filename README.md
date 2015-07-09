@@ -6,7 +6,7 @@ BETA, TEST WELL BEFORE USE!
 This is a Bootstrap Tour extension for [Yii framework 2.0](http://www.yiiframework.com). It encapsulates the [Bootstrap Tour](https://github.com/sorich87/bootstrap-tour) component in terms of a Yii widget,
 and thus makes using Bootstrap Tour component in Yii applications extremely easy.
 
-For license information check the [LICENSE](LICENSE.md)-file.
+For license information check the [LICENSE](LICENSE)-file.
 
 Installation
 ------------
