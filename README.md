@@ -30,8 +30,7 @@ to the require section of your `composer.json` file.
 Usage
 ----
 
-For example, the following
-single line of code in a view file would render a Bootstrap Progress plugin:
+For example, the following lines of code in a view file would render a Bootstrap Tour:
 
 ```php
 <?php Tour::widget([
