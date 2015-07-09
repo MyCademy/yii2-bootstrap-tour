@@ -53,6 +53,5 @@ class Tour extends Widget
             $js .= "tour.start({$this->forceStart});\n";
             $view->registerJs($js);
         }
-        $this->registerClientEvents();
     }
 }
