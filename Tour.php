@@ -40,20 +40,11 @@ class Tour extends Widget
      */
     public function run()
     {
-        $this->registerPlugin($this->name);
-    }
-
-    /**
-     * Registers a specific Bootstrap plugin and the related events
-     * @param string $name the name of the Bootstrap plugin
-     */
-    protected function registerPlugin($name)
-    {
         $view = $this->getView();
         BootstrapTourPluginAsset::register($view);
         if ($this->clientOptions !== false) {
 
-            $varName = $this->$scope ? $this->$scope . '.' . $name : $name;
+            $varName = $this->getVarName();
 
             $options = empty($this->clientOptions) ? '' : Json::htmlEncode($this->clientOptions);
             $js = "$varName = new Tour($options);\n";
@@ -61,5 +52,9 @@ class Tour extends Widget
             $js .= "$varName.start({$this->forceStart});\n";
             $view->registerJs($js);
         }
+    }
+
+    public function getVarName(){
+        return $this->scope ? $this->scope . '.' . $this->name : $this->name;
     }
 }
