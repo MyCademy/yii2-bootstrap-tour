@@ -15,7 +15,7 @@
     }
   ],
   "require": {
-    "yiisoft/yii2": ">=2.0.x-dev",
+    "yiisoft/yii2": "~2.0.0",
     "sorich87/bootstrap-tour": "dev-master"
   },
   "autoload": {
