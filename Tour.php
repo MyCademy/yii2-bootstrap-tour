@@ -20,6 +20,11 @@ class Tour extends Widget
     public $name = 'tour';
 
     /**
+     * @var string
+     */
+    public $scope;
+
+    /**
      * @var string force the start of the tour
      */
     public $forceStart = false;
@@ -47,10 +52,13 @@ class Tour extends Widget
         $view = $this->getView();
         BootstrapTourPluginAsset::register($view);
         if ($this->clientOptions !== false) {
+
+            $varName = $this->$scope ? $this->$scope . '.' . $name : $name;
+
             $options = empty($this->clientOptions) ? '' : Json::htmlEncode($this->clientOptions);
-            $js = "var $name = new Tour($options);\n";
-            $js .= "$name.init();\n";
-            $js .= "$name.start({$this->forceStart});\n";
+            $js = "$varName = new Tour($options);\n";
+            $js .= "$varName.init();\n";
+            $js .= "$varName.start({$this->forceStart});\n";
             $view->registerJs($js);
         }
     }
