@@ -49,8 +49,8 @@ class Tour extends Widget
         if ($this->clientOptions !== false) {
             $options = empty($this->clientOptions) ? '' : Json::htmlEncode($this->clientOptions);
             $js = "var $name = new Tour($options);\n";
-            $js .= "tour.init();\n";
-            $js .= "tour.start({$this->forceStart});\n";
+            $js .= "$name.init();\n";
+            $js .= "$name.start({$this->forceStart});\n";
             $view->registerJs($js);
         }
     }
