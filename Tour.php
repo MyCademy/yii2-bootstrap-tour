@@ -12,6 +12,14 @@ namespace MyCademy\BootstrapTour;
 use yii\base\Widget;
 use yii\helpers\Json;
 
+/**
+ * Class Tour
+ * @package MyCademy\BootstrapTour
+ *
+ * @property array $clientOptions the options for the underlying Bootstrap Tour JS plugin.
+ * Please refer to the corresponding [Bootstrap Tour plugin API](http://bootstraptour.com/api/) for possible options
+ */
+
 class Tour extends Widget
 {
     /**
@@ -31,9 +39,9 @@ class Tour extends Widget
 
     /**
      * @var array the options for the underlying Bootstrap Tour JS plugin.
-     * Please refer to the corresponding [Bootstrap Toor plugin API](http://bootstraptour.com/api/) for possible options.
+     * Please refer to the corresponding [Bootstrap Tour plugin API](http://bootstraptour.com/api/) for possible options.
      */
-    public $clientOptions = [];
+    protected $_clientOptions = [];
 
     /**
      * Renders the widget.
@@ -56,5 +64,21 @@ class Tour extends Widget
 
     public function getVarName(){
         return $this->scope ? $this->scope . '.' . $this->name : $this->name;
+    }
+
+    /**
+     * @return array
+     */
+    public function getClientOptions()
+    {
+        return $this->_clientOptions;
+    }
+
+    /**
+     * @param array $clientOptions
+     */
+    public function setClientOptions($clientOptions)
+    {
+        $this->_clientOptions = $clientOptions;
     }
 }
