@@ -28,12 +28,12 @@ class Tour extends Widget
     const START_MODE_FORCE_START = 3; //Initialize and force start the tour
 
     /**
-     * @var string
+     * @var string $name The javascript variable name used for the tour
      */
     public $name = 'tour';
 
     /**
-     * @var string
+     * @var string $scope The scope used for the javascript variable, e.g. 'window'. Leave blank for local scope.
      */
     public $scope;
 
@@ -69,7 +69,7 @@ class Tour extends Widget
                 $forced = $this->startMode >= self::START_MODE_FORCE_START ? 'true' : '';
                 $js .= "$varName.start($forced);\n";
             }
-            
+
             $view->registerJs($js);
         }
     }

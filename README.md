@@ -33,8 +33,10 @@ Usage
 For example, the following lines of code in a view file would render a Bootstrap Tour:
 
 ```php
-<?php Tour::widget([
-    'clientOptions' => [
+<?php
+
+Tour::widget([
+    'clientOptions' => [ //Bootstrap Tour Options, see: http://bootstraptour.com/api/
         'steps' => [
             [
                 'element' => "#element1",
@@ -48,5 +50,38 @@ For example, the following lines of code in a view file would render a Bootstrap
             ],
         ],
     ],
-]); ?>
+]);
+?>
+```
+
+If you want to manually start the tour:
+
+```php
+<?php
+
+$tour = new Tour([
+    'scope' => 'window', //Set scope to make the 'tour' variable global
+    'startMode' => Tour::START_MODE_INIT_ONLY, //Only initialize the tour
+    'clientOptions' => [ //Bootstrap Tour Options, see: http://bootstraptour.com/api/
+        'steps' => [
+            [
+                'element' => "#element1",
+                'title' => "Step 1",
+                'content' => "Content of my step 1",
+            ],
+            [
+                'element' => "#element2",
+                'title' => "Step 2",
+                'content' => "Content of my step 2",
+            ],
+        ],
+    ],
+]);
+
+$tour->run();
+
+echo Html::button('Start the tour', [
+    'onclick' => $tour->getVarName().'.start(true);' //use $tour->getVarName() to get the reference to the 'tour' var name
+]);
+?>
 ```
