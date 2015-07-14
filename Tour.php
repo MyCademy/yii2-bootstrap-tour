@@ -22,6 +22,11 @@ use yii\helpers\Json;
 
 class Tour extends Widget
 {
+    const START_MODE_NONE = 0; //Don't initialize or start the tour
+    const START_MODE_INIT_ONLY = 1; //Only initialize the tour
+    const START_MODE_DEFAULT = 2; //Initialize and start the tour
+    const START_MODE_FORCE_START = 3; //Initialize and force start the tour
+
     /**
      * @var string
      */
@@ -33,9 +38,9 @@ class Tour extends Widget
     public $scope;
 
     /**
-     * @var string force the start of the tour
+     * @var int Start of the tour
      */
-    public $forceStart = false;
+    public $startMode = self::START_MODE_DEFAULT;
 
     /**
      * @var array the options for the underlying Bootstrap Tour JS plugin.
@@ -56,8 +61,15 @@ class Tour extends Widget
 
             $options = empty($this->clientOptions) ? '' : Json::htmlEncode($this->clientOptions);
             $js = "$varName = new Tour($options);\n";
-            $js .= "$varName.init();\n";
-            $js .= "$varName.start({$this->forceStart});\n";
+
+            if ($this->startMode >= self::START_MODE_INIT_ONLY)
+                $js .= "$varName.init();\n";
+
+            if ($this->startMode >= self::START_MODE_DEFAULT) {
+                $forced = $this->startMode >= self::START_MODE_FORCE_START ? 'true' : '';
+                $js .= "$varName.start($forced);\n";
+            }
+            
             $view->registerJs($js);
         }
     }
