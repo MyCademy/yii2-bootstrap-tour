@@ -35,6 +35,8 @@ For example, the following lines of code in a view file would render a Bootstrap
 ```php
 <?php
 
+use MyCademy\BootstrapTour\Tour;
+
 Tour::widget([
     'clientOptions' => [ //Bootstrap Tour Options, see: http://bootstraptour.com/api/
         'steps' => [
